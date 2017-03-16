@@ -1,0 +1,20 @@
+<!-- this is the really index of main page for entrance but for now replicate login -->
+
+<div id="sectiontitle">
+<h2>Welcome! Please Sign In</h2>
+</div>
+  
+  <form class="create-update-form" action="/users/login" method="POST">
+
+    <div id="form-group">
+        <input type="text" id="em" name="email" placeholder="Email">
+        <input type="password" id="pass" name="password" placeholder="Password">
+        <button id="submit-user" type="submit">Sign In</button>
+        <a id="add-user" href="/users/new" >Sign Up</a>
+        <br>
+        <!-- A link if user trouble login in set up add update route to reset their password-->
+        <a id="forgotpassword" href="forgotpassword.html">Forgot Password?</a>
+
+    </div>
+
+  </form>

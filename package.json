@@ -1,0 +1,33 @@
+{
+  "name": "jsgroupproject2trivia",
+  "version": "1.0.0",
+  "description": "Advance Trivia App. It requieres a login, authorization, session, and databases. This will be using the MVC model with sequalize and leaderboard as special feature.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jsalamat/jsgroupproject2trivia.git"
+  },
+  "author": "jonsalamat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jsalamat/jsgroupproject2trivia/issues"
+  },
+  "homepage": "https://github.com/jsalamat/jsgroupproject2trivia#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.1",
+    "method-override": "^2.3.7",
+    "mysql": "^2.13.0"
+  },
+  "devDependencies": {
+    "handlebars-helper-css": "^0.1.0"
+  }
+}

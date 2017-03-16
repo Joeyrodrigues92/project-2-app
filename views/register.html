@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <title>Title Trivia Game</title>
+
+        <!-- Added a link to Bootstrap-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
+       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+       <link href="https://fonts.googleapis.com/css?family=Prompt:400,500i,800i,900i" rel="stylesheet">
+    
+    <style>
+    html, body {
+    /*  background-color: grey;*/
+/*      background: url(../images/background-graph.jpg) no-repeat center center;
+        background-size: cover;*/
+    }
+    body {
+      font-family: 'Prompt', sans-serif;
+    }
+    #titletrivia{
+      text-align: center;
+      margin: 0 auto;
+    }
+    #registertitle{
+      letter-spacing: 0px;
+      text-align: left;
+      margin: 0 auto;
+    }
+    .body-gradient {
+      
+      margin: 20px 0 20px 0;
+      padding: 0;
+    /*  background-color: rgba(255,165,0, 0.4);*/
+      background: linear-gradient(to right, rgba(92, 205, 254,1), rgba(8, 39, 70, 1));
+      
+      border-top: 4px solid #000000;
+      border-bottom: 4px solid #000000;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    }
+    .h1, h1 {
+      font-size: 75px;
+      color: #ffffff;
+      line-height: .2;
+      -webkit-text-fill-color: white;
+      -webkit-text-stroke-color: #000000;
+      -webkit-text-stroke-width: 2.00px;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 5px grey;
+      margin-left: 40px;
+      margin-bottom: 0;
+      margin-top: 125px;
+      padding-right: 0;
+      font-family: 'Prompt', sans-serif;
+      font-style: italic;
+      font-weight: bold;
+    }
+    .create-update-form label {
+      font-family: 'Prompt', sans-serif;
+      font-weight: bold;
+      font-style: italic;
+      margin-top: 15px;
+      font-size: 16px;
+    }
+    #registersection {
+      width: 420px;
+      margin: 0 auto;
+      margin-top: 140px;
+      margin-bottom: 140px;
+      background-color: #c7ecfe;
+      padding: 30px 10px 30px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
+    }
+    .create-update-form {
+    /*  text-align: center;
+      margin: 0 auto;*/
+      margin-top:0;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+    .container {
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: 0;
+        margin-left: 0;
+        margin: 0 auto;
+    }
+    button#add-newuser, a#backtomain  {
+      font-weight: bold;
+      display: inline-block;
+      font-size: 16px;
+      color: #ffffff;
+      background-color: #25769d;
+      border: 2px solid #25769d;
+      letter-spacing: 0px; 
+      margin: 20px 15px 20px 10px;
+      padding: 5px 20px 3px;
+      max-width: 330px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 4px 5px #999;
+    }
+    button#add-newuser:hover, a#backtomain:hover  {
+      color: #25769d;
+      background-color: #ffffff;
+      border: 2px solid #ffffff;
+    /*  text-shadow: 2px 2px 2px grey;*/
+    }
+    button#add-newuser:active, a#backtomain:active {
+      background-color: #ffffff;
+      box-shadow: 3px 3px #666;
+      transform: translateY(4px);
+    }
+    div.footer {
+        max-width: 100%;
+        color: black;
+        font-size: 16px;
+        height: 85px;
+        line-height: 65px;
+        text-align: center;
+    }
+    #forgotpassword{
+      text-align: center;
+      margin: 0 auto;
+    } 
+    
+    #username, #email, #pass, #retypepass{
+      display:inline;width:auto;margin-top:15px;font-size:20px;
+    }
+    label{
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    </style>
+
+        
+    </head>
+    
+<body>
+
+  <div id="titletrivia">
+        <h1>Title Trivia Game</h1>
+    </div>
+
+
+<div class="body-gradient">
+
+  
+        <div class="container">
+          <div id="registersection">
+
+              <div id="registertitle">
+                <h3>Register Here</h3>
+              </div>
+
+                    <form class="create-update-form" action="/users/create" method="POST">
+                      <div class="form-group">
+                        <label for="username">Username</label><br>
+                        <input type="text" id="username" name="username" placeholder="testman">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Email</label><br>
+                        <input type="text" id="email" name="email" placeholder="test123@test.com">
+                      </div>
+                      <div class="form-group">
+                        <label for="pass">Password</label><br>
+                        <input type="password" id="pass" name="password" placeholder="*********">
+                      </div>
+                      <div class="form-group">
+                        <label for="retypepass">Re-Type Password</label><br>
+                        <input type="password" id="retypepass" placeholder="*********">
+                      </div>
+
+                      <!-- to test if new password match to retype password before added to database -->
+                        <button id="add-newuser" type="submit">Sign Up</button>
+                        <a id="backtomain" href="login.html" >Login</a>
+                       <!--  href="/users/sign-in" -->
+                        <br>
+
+                    </form>
+                            
+          </div>
+    </div>
+</div>
+
+    <div class="footer">
+      <div >
+          <p>&copy; Copyright 2017</p>
+      </div>
+    </div>
+
+
+
+  
+
+</body>
+</html>

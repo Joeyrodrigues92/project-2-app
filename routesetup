@@ -1,0 +1,21 @@
+route
+
+get route
+	 form to login a user
+	 (login/register ) -> index handlebar route "/"
+
+get route
+ 	users can see
+ 			user_status
+ 			-current leaderboard
+ 			-stats on all pass test- advanced -> graph
+ 		-> button choice to take trivia
+ 			-advance more buttons with category
+ 			- route "user/:id"
+
+post route
+	form to register new user
+	user can see at end
+	 	- date test taken
+	 	-new score added to leaderboard
+	 	-route "/newuser"
