@@ -2,8 +2,18 @@
 	{{> game}}
 {{/if}}
 
+
+<div>
+	<p>You say your an American? But do you know your history?</p>
+
+	<p>You'll be given a ten question quiz, testing your American History knowledge.
+		You'll have thirty seconds to answer each question. Every correct answer, will give you five points, every wrong answer will decrease your score by two (you could end up with a negative score). You can leave a question blank, and it will not affect your score.</p>
+
+</div>
+
 <div>	
+	<h3>Recent Users and Scores</h3>
 	{{#each scores}}
-		<p>Score: {{total_score}} by User: {{user_id}}</p>
+		<p>Score: {{total_score}} by User: {{user_email}}</p>
 	{{/each}}
 </div>

@@ -43,7 +43,7 @@ router.get('/quiz', function(req,res) {
 				username: req.session.username
 			});
 
-		});
+		}); 
 	}else{
 		res.redirect('/users/sign-in');
 	}
@@ -55,7 +55,7 @@ router.post('/create', function(req,res) {
 	var query = "INSERT INTO scores (total_score, user_id) VALUES (?, ?)";
 
 	connection.query(query, [req.body.total_score, req.session.user_id], function(err, coupons) {
-		res.send('200');
+		res.redirect('/')
 	});
 });
 

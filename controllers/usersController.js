@@ -70,7 +70,7 @@ router.post('/create', function(req,res) {
               connection.query(query, [ req.session.user_id ], function(err, response) {
                 req.session.username = response[0].username;
                 req.session.user_email = response[0].email;
-                req.session.company = response[0].company;
+            
 
                 res.redirect('/scores')
               });
