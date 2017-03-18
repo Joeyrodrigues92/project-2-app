@@ -12,8 +12,8 @@ var connection = require('../config/connection.js')
 
 router.get('/', function(req,res) {
 	if (req.session.logged_in){
-		var query = "SELECT * FROM scores ORDER BY total_score DESC"
-
+		 var query = "SELECT * FROM scores ORDER BY total_score DESC"
+		// var query = 'SELECT * FROM users LEFT JOIN scores ON users.id = scores.id'
 		connection.query(query, function(err, scores) {
 			res.render('scores/index', {
 				scores: scores,
@@ -31,8 +31,10 @@ router.get('/', function(req,res) {
 });
 
 router.get('/quiz', function(req,res) {
-	if (req.session.logged_in){
+	//if (req.session.logged_in){
 		var query = "SELECT * FROM scores ORDER BY total_score DESC"
+
+		// var query = "SELECT * FROM scores ORDER BY total_score WHERE"
 
 		connection.query(query, function(err, scores) {
 			res.render('scores/quiz', {
@@ -44,9 +46,9 @@ router.get('/quiz', function(req,res) {
 			});
 
 		}); 
-	}else{
-		res.redirect('/users/sign-in');
-	}
+	// }else{
+	// 	res.redirect('/users/sign-in');
+	// }
 
 	
 });
@@ -54,8 +56,11 @@ router.get('/quiz', function(req,res) {
 router.post('/create', function(req,res) {
 	var query = "INSERT INTO scores (total_score, user_id) VALUES (?, ?)";
 
-	connection.query(query, [req.body.total_score, req.session.user_id], function(err, coupons) {
-		res.redirect('/')
+	connection.query(query, [req.body.total_score, req.session.user_id], function(err) {
+		console.log(err);
+
+
+		res.redirect('/');
 	});
 });
 

@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "coolidge2",
-  database: "quizgame_db"
+  database: "triva_db"
 });
 
 // Make connection.
